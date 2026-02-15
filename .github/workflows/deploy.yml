@@ -83,10 +83,10 @@ jobs:
           # Create a ZIP file from the WAR file
           cp target/lumiatech-v1.war ROOT.war
           zip -r ROOT.zip ROOT.war
-          aws s3 cp ROOT.zip s3://ndzenyuy-test-bucket/ROOT.zip
+          aws s3 cp ROOT.zip s3://bucket-for-bucket-2/ROOT.zip
           
           # Deploy the ZIP file using the AWS CLI
-          aws elasticbeanstalk create-application-version --application $APPLICATION_NAME --version-label $GITHUB_RUN_NUMBER --source-bundle S3Bucket=ndzenyuy-test-bucket,S3Key=ROOT.zip
+          aws elasticbeanstalk create-application-version --application $APPLICATION_NAME --version-label $GITHUB_RUN_NUMBER --source-bundle S3Bucket=bucket-for-bucket-2,S3Key=ROOT.zip
           aws elasticbeanstalk update-environment --environment-name $ENVIRONMENT_NAME --version-label $GITHUB_RUN_NUMBER
 
       
