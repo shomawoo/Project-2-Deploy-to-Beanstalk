@@ -27,8 +27,8 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.projectKey=lumia-beanstalk_project-2
-            -Dsonar.organization=lumia-beanstalk
+            -Dsonar.projectKey=lunmiatech_project2
+            -Dsonar.organization=lunmiatech
             -Dsonar.host.url=https://sonarcloud.io
             -Dsonar.java.binaries=target/classes
             -Dsonar.branch.name=master
